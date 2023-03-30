@@ -12,6 +12,7 @@
     <script>
         // //  조건문 IF & else
 
+
         // let id = prompt("id 입력");
         // if (id == "jy") {
         //     let pw = prompt("pw 입력")
@@ -25,7 +26,6 @@
 
 
         // // 조건문 + AND 논리 연산자
-        //  논리연산자 AND : && 사용
 
 
         // let id = prompt("id 입력");
@@ -38,12 +38,12 @@
 
 
         // 조건문 + ( AND + OR )논리 연산자
-        // 논리 연산자 or  :  || 사용 [enter key / backspace key 사이]
 
 
         let id = prompt("id 입력");
         let pw = prompt("pw 입력");
         if ((id === "jy" || id === "pyl") && pw == "1234") {
+            // ( ) 아이디 사이의 ( ) 먼저 처리한후 && 처리
             alert(id + ' 로그인 성공');
         } else {
             alert("정보 불일치");
