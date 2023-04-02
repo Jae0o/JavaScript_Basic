@@ -15,25 +15,26 @@
 // }
 
 
-// for문
-let fruit_list = ['사과', '감', '감', '배', '포도', '포도', '딸기', '포도', '감', '수박', '딸기']
-let count = 0;
+// // for문
+// let fruit_list = ['사과', '감', '감', '배', '포도', '포도', '딸기', '포도', '감', '수박', '딸기']
+// let count = 0;
 
-for (let i = 0; i < fruit_list.length; i++) {
-    let fruit = fruit_list[i]
-    if (fruit == '감') {
-        count += 1;
-    }
-
-};
-console.log(count);
-
-
-// function checkEmail(email) {
-//     if (condition) {
-
+// for (let i = 0; i < fruit_list.length; i++) {
+//     let fruit = fruit_list[i]
+//     if (fruit == '감') {
+//         count += 1;
 //     }
-// }
 
-// checkEmail('taehyun@gmail.com') // 이메일이 맞습니다
-// checkEmail('taehyun$gmail.com') // 이메일이 아닙니다.
+// };
+// console.log(count);
+
+function checkEmail(email) {
+    if (email.indexOf('@') == -1) {
+        console.log("이메일이 아닙니다");
+    } else {
+        console.log("이메일이 맞습니다.");
+        console.log("아이디 : " + email.split("@", 1));
+        console.log("도메인 : " + email.split("@")[1].split(".")[0]);
+    }
+}
+checkEmail("leey153@naver.com");
