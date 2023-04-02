@@ -64,6 +64,17 @@ console.log(sort_1);
 sort_1.reverse();
 console.log(sort_1);
 
+/* 배열의 for in 문 */
+// for ( key in 배열이름 ) { 반복내용 }
+// 출력시 key = 인덱스 번호를 출력함
+// 배열이름[key] = 배열의 내용물을 출력함
+let forin_1 = ["one", "two", "three"];
+console.log(forin_1);
+for (number in forin_1) {
+    console.log(number); /* 인덱스 번호들을 나열 */
+    console.log(forin_1[number]); /* 배열의 내용물들을 나열 */
+}
+
 
 /* 반복문에 응용 */
 
