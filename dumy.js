@@ -28,13 +28,18 @@
 // };
 // console.log(count);
 
-function checkEmail(email) {
-    if (email.indexOf('@') == -1) {
-        console.log("이메일이 아닙니다");
-    } else {
-        console.log("이메일이 맞습니다.");
-        console.log("아이디 : " + email.split("@", 1));
-        console.log("도메인 : " + email.split("@")[1].split(".")[0]);
-    }
-}
-checkEmail("leey153@naver.com");
+// function checkEmail(email) {
+//     if (email.indexOf('@') == -1) {
+//         console.log("이메일이 아닙니다");
+//     } else {
+//         console.log("이메일이 맞습니다.");
+//         console.log("아이디 : " + email.split("@", 1));
+//         console.log("도메인 : " + email.split("@")[1].split(".")[0]);
+//     }
+// }
+// checkEmail("leey153@naver.com");
+
+let abc = ["a", "b", "c"];
+abc.splice(1, 1, "g");
+
+console.log(abc);
