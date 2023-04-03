@@ -2,6 +2,10 @@
 // 문자열에서 찾고자 하는 특정 내용을 찾거나 그값을 반환하고자 할때 사용함.
 
 // ( / 정규표현식 / 플래그 ) ; = 가장 기본적인 형태
+let 정규식이름 = /정규표현식/migusy;
+
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
 
 
 /* 정규식의 메소드 method */
@@ -13,18 +17,51 @@ console.log(".match : " + ("abcbdbeb").match(/b/g)); /* 앞 텍스트를 없앨�
 
 /* .replace */
 // ( "문자열" ) .macth ( / 정규식 / 플래그 , " 대체 내용 " ) ;
-console.log(".replace : " + ("abcde").replace(/b/, " test "));
+console.log(".replace : " + ("abcde").replace(/b/, " test ")); /* 결과 = [ 'a test cde' ] */
 // 문자열에서 정규식과 같은 항목을 찾아 대체 내용으로 변환하여 표시
 
 /* .split */
 // ( "문자열" ) .split ( / 정규식 / 플래그 ) ;
-console.log(".split : " + ("abcbacabcba").split(/c/));
+console.log(".split : " + ("abcbacabcba").split(/c/)); /* 결과 = [ 'ab','ba','ab','ba' ] */
 // 문자열에서 정규식에 해당하는 항목을 찾아 찾은 항목을 기준으로 쪼개어 배열로 반환
 
 /* .test */
 // ( / 정규식 / 플래그 ) .test ( " 문자열 " ) ;
-console.log(".test : " + (/a/).test("abcd"));
+console.log(".test : " + (/a/).test("abcd")); /* 결과 = true */
+// 문자열에서 정규식을 찾아 같은 항목이 있다면 true 없다면 false를 반환함
 
 /* exec */
 // ( / 정규식 / 플래그 ) .test ( " 문자열 " ) ;
-console.log(".exec : " + (/a/g).exec("abcdaaaa"));
+console.log(".exec : " + (/a/g).exec("abcdaaaa")); /* 결과 = [ 'a' ] */
+// .match와 유사하지만 다른점은 동일한 항목이 많아도 처음 발견한 항목 하나만을 반환함.
+
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+
+
+/* 정규식의 플래그 flags */
+// 플래그는 기본적으로 서로 중첩하여 사용가능하다
+
+/* i */
+// 대소문자를 구분하지 않고 사용가능하게 해줌
+console.log("not use i : " + ("abcd").match(/A/)); /* 결과 = null */
+console.log("use i : " + ("abcd").match(/A/i)); /* 결과 = ['a'] */
+
+/* g */
+// global의 약자로 검색 내용중 중복내용 모두를 반환함
+console.log("not use g : " + ("aabacaaada").match(/a/)); /* 결과 = ['a'] */
+console.log("use g : " + ("aabacaaada").match(/a/g)); /* 결과 =  ['a', 'a', 'a','a', 'a', 'a','a'], */
+
+/* m */
+// 문자열의 행이 바껴도 검색을 이어간다
+let test_word = "first word\nsecond start test\nthird word test";
+console.log("not use m : " + (test_word).match(/^second/)); /* 결과 = null */
+console.log("use m : " + (test_word).match(/^second/m)); /* 결과 = [ 'second' ] */
+
+/* s and y and u */
+// s = . 이 개행문자까지 포함하여 검색함
+// y = 문자내의 특정 위치에서 검색을 진행하는 sticky 모드를 활성화함
+// u = 유니코드 전체를 지원하게 함
+
+
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
