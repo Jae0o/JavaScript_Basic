@@ -1,7 +1,7 @@
 // Java Script 적용
 
-// ###.js 파일 생성후 - ###.html 파일의 </body> 바로앞
-// <script src="###.js" type="text/javascript"></script> 적용
+// ###.js 파일 생성후 - ###.html 파일의 </head> 바로앞
+// <script defer src="###.js" type="text/javascript"></script> 적용
 
 // 변수 [ Variable ]
 
