@@ -45,3 +45,23 @@ function defind1() { };
 defind2 = function () { };
 //third
 (function () { console.log("1회성 함수 표현할대 사용하고 잘안쓰임") })();
+
+
+/* 값으로써의 함수 */
+
+// 함수는 값이기 때문에 다른함수의 인자로 전달 될 수있다.
+
+function calculator(func, num) {
+    return func(num);
+}
+
+function increase(num) {
+    return num + 100;
+}
+
+function decrease(num) {
+    return num - 100;
+}
+
+console.log(calculator(increase, 3)); /* 값 = 103 */
+console.log(calculator(decrease, 3)); /* 값 = -97 */
