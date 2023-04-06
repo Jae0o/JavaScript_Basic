@@ -47,6 +47,7 @@ console.log(veriable3);
 
 
 /* 예시 4 */
+
 let count = 5;
 
 function a() {
@@ -106,5 +107,6 @@ console.log(sum());
     }
     console.log(sum());
 })();
+
 /* 전체를 함수로 묶고 한번더 괄호로 묶어준후,
 함수 사용법과 같이 마지막에 괄호를 한번 붙여주면 가능! */
