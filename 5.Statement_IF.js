@@ -50,3 +50,18 @@ test2(4, "yes");
 console.log(1 === 1 ? '같다' : '같지않다'); /* 값 = 같다 */
 console.log(1 === 3 ? '같다' : '같지않다'); /* 값 = 같지않다 */
 
+
+console.clear();
+/* ------------------------------------------------------------------------ */
+
+/* 예제 */
+
+// 짝수면 true 홀수면 false
+let num = 5;
+if ((num % 2) === 0) {
+    console.log("value : true");
+} else {
+    console.log("value : false");
+};
+
+console.log((num % 2) === 0 ? "ok" : "No");

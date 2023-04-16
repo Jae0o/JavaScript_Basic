@@ -41,6 +41,7 @@ console.log(!false); /* true */
 // !!를 boolean이 아닌 타입의 앞에 붙이면 데이터 타입을 boolean으로 변경할수 있다.
 console.log(!!123); /* ture */
 console.log(!!null); /* false */
+
 /* ------------------------------------------------------------------------ */
 
 /* incremant / decrement operator */
