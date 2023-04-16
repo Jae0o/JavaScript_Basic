@@ -14,13 +14,33 @@ console.log("1" + 2);
 
 //* numeric operator */
 
-console.log(2 + 3);
-console.log(2 - 3);
-console.log(2 / 3);
-console.log(2 * 3);
-console.log(2 % 3);
-console.log(2 ** 3);
+console.log(2 + 3); /* 더하기 */
+console.log(2 - 3); /* 빼기 */
+console.log(2 / 3); /* 나누기 */
+console.log(2 * 3); /* 곱하기 */
+console.log(2 % 3); /* 나머지후 나머지값 */
+console.log(2 ** 3); /* 지수 / 거듭제곱 */
 
+/* ------------------------------------------------------------------------ */
+
+/* unary operators */
+//  + 양    - 음    ! 부정
+let test = 9;
+console.log(+test); /* 9 */
+console.log(-test); /* -9 */
+
+// 숫자가 아닌 타입앞에 +를 붙이면 숫자로 변경시 어떤 값이 나오는지 확인 할수 있다
+console.log(+" "); /* 0 */
+console.log(+true); /* 1 */
+console.log(+false); /* 0 */
+console.log(+null); /* 0 */
+console.log(+undefined); /* NaN */
+
+console.log(!true); /* false */
+console.log(!false); /* true */
+// !!를 boolean이 아닌 타입의 앞에 붙이면 데이터 타입을 boolean으로 변경할수 있다.
+console.log(!!123); /* ture */
+console.log(!!null); /* false */
 /* ------------------------------------------------------------------------ */
 
 /* incremant / decrement operator */
