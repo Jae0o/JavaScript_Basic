@@ -1,3 +1,4 @@
+'use strict';
 /* IF Operator & else & else if */
 /*          조 건 문 I F          */
 

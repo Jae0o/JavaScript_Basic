@@ -1,3 +1,4 @@
+'use strict';
 /* loop Statement*/
 /*      반복문     */
 

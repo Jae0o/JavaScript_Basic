@@ -1,3 +1,4 @@
+'use strict';
 /* Operator */
 /*  선언자    */
 

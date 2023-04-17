@@ -1,3 +1,4 @@
+'use strict';
 /* 객체 */
 // 객체는 = 맵 (map) , 연관배열 ( associative array ) , 딕셔너리 ( dictionary ) 라고도 불림
 // 공통된 데이터를 묶어 보관하는 역할을 한다.

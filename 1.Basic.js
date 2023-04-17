@@ -1,3 +1,4 @@
+'use strict';
 // Java Script 적용
 
 // ###.js 파일 생성후 - ###.html 파일의 </head> 바로앞
