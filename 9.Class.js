@@ -58,12 +58,13 @@ const ObJ = { name: "객체일뿐" };
 
 class Artist {
     constructor(name, major) {
+        // instance 레벨의 method
         this.name = name;
         this.major = major;
     };
-
-    // instance 레벨의 method
     display = () => { console.log(`전공 : ${this.major} / 이름 : ${this.name}`) };
+    // 동일한 형식의 property와 method를 찍어내는것을 instance 레벨의 property 와 method라함
+
     // Class 레벨의 method
     static StaticMethod() {
         //Class 레벨의 method에서는 this를 참조할 수 없음.
@@ -74,6 +75,40 @@ class Artist {
 const Lee = new Artist('lee', 'Piano');
 console.log(Lee.display());
 console.log(Lee);
+// 호출을 하더라도 static /class 레벨은 호출되어 표시되지 않음.
 
 // class 레벨의 경우 호출 이름을 class 이름으로 해야함
 console.log(Artist.StaticMethod());
+
+/* ------------------------------------------------------------------------ */
+
+/* field */
+
+class Feild {
+    /* field */
+    #name; // private
+    major; // public
+    #type = "서양";
+    // 생성자에서 받기전 보이지 않는 필드들이 존재하는것과 같음.
+
+    constructor(name, major) {
+        this.#name = name;
+        this.major = major;
+    };
+    display() { console.log(`전공 : ${this.major} / 이름 : ${this.#name}`) };
+};
+
+const TestField = new Feild('Kim', 'Drum');
+TestField.display();
+console.log(TestField);
+/* 결론 */
+// 해당 Class 에는 3개의 property가 존재하고
+// name and major은 외부로 부터 property값을 제공 받고
+// type 은 미리 초기화 해둔 값으로 지정된다.
+
+/* 접근 제어자 ( 캡슐화 ) */
+// 내부상 필요한 데이터를 외부에서 보이지 않도록 캡슐화 하는 작업
+// 보안에는 private(#) public(기본값) protected(상속과 관련) 이 있고
+// public은 기본상태이며 private는 필드의 값에 #을 붙여준다.
+// #을 붙여주면 외부에서 값을 수정할수없음.
+// instance를 호출해도 private로 설정한 값은 보여지지 않는다.
