@@ -112,3 +112,146 @@ console.log(TestField);
 // public은 기본상태이며 private는 필드의 값에 #을 붙여준다.
 // #을 붙여주면 외부에서 값을 수정할수없음.
 // instance를 호출해도 private로 설정한 값은 보여지지 않는다.
+
+/* ------------------------------------------------------------------------ */
+
+/* 접근자 프로퍼티 */
+// Accessor Property
+
+// 무엇인가 처리하는 행동은 아니지만 무엇을 조합하거나 특정한 일을 좀 더 처리할때 주로 사용
+// 예로 변수를 할당하거나 함수의 일보다는 함수의 한부분을 호출하는 과정 
+
+/* Not use Get or Set */
+class GetSet {
+    constructor(time, num) {
+        this.time = time;
+        this.num = num;
+        this.test = `배정시간 : ${this.time}  수험번호 : ${this.num}`;
+    };
+    /* test를 꼭 함수로 받아야할까? */
+    // test() {
+    //     console.log(`배정시간 : ${this.time}  수험번호 : ${this.num}`);
+    // };
+}
+
+let lee = new GetSet('16:00', 5);
+console.log(lee.test);
+// 동일 하게 실행이 가능하지만...
+lee.time = '14:00';
+console.log(lee.time);
+console.log(lee.test);
+// 해당 값을 변경하더라도 변경이 되지 않는 문제가 존재하기때문에 업데이트가 가능한 함수를 사용하던이유.
+
+
+/* Use Get or Set */
+
+class GetSet2 {
+    constructor(time, num) {
+        this.time = time;
+        this.num = num;
+        this.test = `배정시간 : ${this.time}  수험번호 : ${this.num}`;
+    };
+
+    get test() {
+        // 함수의 복잡한 일이라기 보다는 속성의 한부분이라고 생각될때 간단하게 get을 붙여 사용가능
+        console.log(`배정시간 : ${this.time}  수험번호 : ${this.num}`);
+    };
+
+    set result(value) {
+        // 변수를 "할당" 할때 사용하는 것인 set
+        console.log(value, "왜안돼");
+    };
+}
+
+let jae = new GetSet('15:00', 2);
+// 새로운 객체 생성
+console.log(jae.test);
+// 일반적 함수와 달리 " ( ) " 를 넣지 않아도 호출 get을 이용해 함수를 호출
+jae.result = 'pass';
+// set을 통해 함수를 할당 하기 때문에 위와 같은 방법으로 호출
+console.log(jae);
+
+/* ------------------------------------------------------------------------ */
+
+/* 확장 */
+// Extends
+
+/* Not use Extends */
+class NotUseDog {
+    constructor(color) {
+        this.color = color;
+    };
+    play() {
+        console.log("산책이 가능하다.");
+    }
+};
+class NotUseCat {
+    constructor(color) {
+        this.color = color;
+    };
+    play() {
+        console.log("산책이 가능하다.");
+    }
+};
+let smalldog = new NotUseDog('brown');
+let samllcat = new NotUseCat('black');
+console.log(smalldog);
+console.log(samllcat);
+smalldog.play();
+samllcat.play();
+// 두개의 동일한 클래스에 공통된 내용이 존재하고 이런경우를
+// 이러한 비효율을 막기 위해 확장 Extends를 사용한다.
+
+/* Use Extends */
+
+// 동물이라는 공통점을 가지고 있다.
+class Animal {
+    constructor(color) {
+        this.color = color;
+    };
+    play() {
+        console.log("use extends : 산책이 가능하다.");
+    };
+};
+class UseDog extends Animal { }
+// extends를 통해 animal에 있는 생성자 함수 변수 모든걸 UseDog으로 상속한다.
+let bigdog = new UseDog('gold');
+console.log(bigdog);
+bigdog.play();
+
+/* 생성자와 함수 변수를 추가하고싶을때 */
+class UseCat extends Animal {
+    // 생성자 추가
+    constructor(color, name) {
+        // 기존 상속된 상속자도 써주고 super를 통해 상속된 생성자도 링크해ㅈ ㅁ
+        super(color);
+        // super : 내가 상속중인 부모를 카르킴 this와 비슷함
+        this.name = name;
+    };
+    // 기존의 class에 함수적는것과 동일 하게 추가가능
+    food() {
+        console.log("밥은 뭘먹을까");
+    };
+    // 상속된 함수를 덮어 쓰거나 그대로 유지하며 함수에 내용 추가하고싶을때
+    play() {
+        // 기존의 함수를 불러 내용을 쓰면 덮어써지고 기존의 함수내용은 없어짐.
+        console.log("use extends : 산책이 불가능할 확률이 높다.");
+        // super를 붙여 이전의 상속된 함수를 호출하면 기존의 내용은 유지하며 새로 추가 가능 
+        super.play();
+    }
+}
+let bigcat = new UseCat("white", "nabi");
+console.log(bigcat);
+bigcat.food(); /* 추가한 함수 */
+bigcat.play(); /* 기존의 상속된 함수에 덮어쓰고 유지하기 */
+
+
+
+
+class TestAnimal extends Animal {
+    constructor(color, name, age) {
+        this.name = name;
+        this.age = age;
+    }
+};
+let Testing = new TestAnimal("name", "21");
