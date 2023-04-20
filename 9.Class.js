@@ -244,14 +244,3 @@ let bigcat = new UseCat("white", "nabi");
 console.log(bigcat);
 bigcat.food(); /* 추가한 함수 */
 bigcat.play(); /* 기존의 상속된 함수에 덮어쓰고 유지하기 */
-
-
-
-
-class TestAnimal extends Animal {
-    constructor(color, name, age) {
-        this.name = name;
-        this.age = age;
-    }
-};
-let Testing = new TestAnimal("name", "21");
