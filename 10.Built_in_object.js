@@ -231,3 +231,9 @@ console.log(Math.random()); /* Value = 매번 랜덤 */
 
 /* 1~10까지의 random ? */
 console.log(Math.floor(Math.random() * 10) + 1); /* Value = 0~10 random */
+
+
+/* ------------------------------------------------------------------------ */
+
+
+/* String */
