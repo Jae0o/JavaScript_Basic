@@ -11,6 +11,7 @@ console.log(wrapper.toString());
 console.log(wrapper); /* 원시타입 100 */
 
 
+
 /* ------------------------------------------------------------------------ */
 
 
@@ -56,7 +57,7 @@ let decoded = decodeURI(encoded);
 console.log(decoded); /* 값 = https://한글.com */
 
 /* encodeURLComponent & decodeURIComponent */
-// 전체 URL 주소가 아닌 부분적인 part 주고만 있을때 사용
+// 전체 URL 주소가 아닌 부분적인 part 주소만 있을때 사용
 let parturl = '주소한글.com';
 let partencoded = encodeURIComponent(parturl);
 let test = encodeURI(parturl);
@@ -84,3 +85,90 @@ let ThisFalse = false;
 // boolean값을 보여줌
 console.log(ThisTrue.valueOf());
 console.log(ThisFalse.valueOf());
+
+/* ------------------------------------------------------------------------ */
+
+/* Number */
+
+/* new Number */
+// 생성자를 통해 number 생성 가능
+let Numbertest = new Number(4000);
+console.log(Numbertest);
+
+/* number.EPSILON */
+// 0과 1사이를 나타낼수 있는 가장 작은수
+console.log(Number.EPSILON); /* Value = 2.220446049250313e-16 */
+
+/* Number.MAX_SAFE_INTERGER */
+/* Number.MAX_VALUE */
+// 정수에서 사용가능한 가장 큰수
+console.log(Number.MAX_SAFE_INTERGER); /* Value = undefined */
+console.log(Number.MAX_VALUE); /* Value = 1.7976931348623157e+308 */
+
+/* Number.MIN_SAFE_INTERGER */
+/* Number.MIN_VALUE */
+// 정수에서 사용가능한 가장 큰수
+console.log(Number.MIN_SAFE_INTERGER); /* Value = undefined */
+console.log(Number.MIN_VALUE); /* Value = 5e-324 */
+
+/* Number.NaN */
+// 숫자가 아님
+console.log(Number.NaN); /* Value = NaN */
+
+/* Number.NEGATIVE_INFINITY */
+// 음의 infinity 값
+console.log(Number.NEGATIVE_INFINITY); /* Value = -Infinity */
+
+/* Number.POSITIVE_INFINITY */
+// 양의 infinity 값
+console.log(Number.POSITIVE_INFINITY); /* Value = Infinity */
+
+/* Number.prototype */
+// prototype에 접근
+console.log(Number.prototype); /* Value = {} */
+
+/* Number.isNaN( ) */
+// 숫자가 not a number 인가 알려줌
+console.log(Number.isNaN(12)); /* Value = false */
+
+/* Number.isInteger( ) */
+// 숫자가 정수인지 알려줌.
+console.log(Number.isInteger(12)); /* Value = true */
+
+/* Number.isSafeInteger( ) */
+// 숫자가 범위 안의 안전한 정수인가 알려줌.
+console.log(Number.isSafeInteger(12)); /* Value = true */
+
+/* Number.toExponential() */
+// 숫자를 지수 ( 거듭제곱 )로 표현해줌
+let TestExponential = 102;
+console.log(TestExponential.toExponential()); /* Value = 1.02e+2 */
+// 숫자 뒤의 e+2는 10의 2승이라는뜻 으로 1.02 * 10의 2승 이라는뜻
+
+/* Number.toFixed */
+// 반올림하여 문자열로 반환한다.
+let TestFixed = 3.94
+console.log(TestFixed.toFixed()); /* Value = 4 */
+
+/* Number.toString */
+// String 타입으로 바꿔줌
+let TestStrng = 12;
+console.log(TestStrng.toString()); /* Value = 12( 타입이 string)*/
+
+/* .valueOf */
+// 값의 원시타입을 반환함
+let TestValueOf = 102
+console.log(TestValueOf.valueOf()); /* Value = 102 */
+
+/* Number.toLocaleString */
+// 해당 나라에 맞는 문자열로 바꿔줌
+let TesttoLocaleString = 1142
+console.log(TesttoLocaleString.toLocaleString('ar-EG')); /* Value = ١٬١٤٢ */
+
+/* Number.toPrecision */
+// 원하는 자릿수까지 유효하도록 반올림
+let TesttoPrecision = 1.12345
+console.log(TesttoPrecision.toPrecision(3)); /* Value = 1.12 */
+console.log(); /* Value = */
+console.log(); /* Value = */
+console.log(); /* Value = */
