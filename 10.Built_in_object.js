@@ -169,6 +169,65 @@ console.log(TesttoLocaleString.toLocaleString('ar-EG')); /* Value = ١٬١٤٢ *
 // 원하는 자릿수까지 유효하도록 반올림
 let TesttoPrecision = 1.12345
 console.log(TesttoPrecision.toPrecision(3)); /* Value = 1.12 */
-console.log(); /* Value = */
-console.log(); /* Value = */
-console.log(); /* Value = */
+
+
+
+/* ------------------------------------------------------------------------ */
+
+
+/* Math */
+// math 는 대부분 존재하기때문에 직접 만들어 사용할 일은 없음.
+
+/* Math.E */
+// 오일러의 상수
+console.log(Math.E); /* Value = 2.718281828459045 */
+
+/* Math.PI */
+// 원주율 PI값
+console.log(Math.PI); /* Value = 3.141592653589793 */
+
+// --------- static method ---------- //
+
+/* Math.abs( ) */
+// 절대값
+console.log(Math.abs(-13)); /* Value = 13 */
+
+/* Math.ceil( ) */
+//소수점 이하를 올림
+console.log(Math.ceil(1.1234)); /* Value = 2 */
+
+/* Math.floor( ) */
+// 소수점 이하를 내림
+console.log(Math.floor(8.9)) /* Value = 8 */
+
+/* Math.round( ) */
+// 소수점 이하를 반올림함
+console.log(Math.round(1.2)); /* Value = 1 */
+console.log(Math.round(1.5)); /* Value = 2 */
+
+/* Math.trunc( ) */
+// 소수점에서 정수만 반환함
+console.log(Math.trunc(12.345)); /* Value = 12 */
+
+/* Math.max( ) and Math.min( ) */
+// 여러 숫자중 최대값 최소값을 찾아줌
+console.log(Math.max(1, 10, 100)); /* Value = 100 */
+console.log(Math.min(1, 10, 100)); /* Value = 1 */
+
+/* Math.pow( ) */
+// 거듭제곱을 해줌
+console.log(Math.pow(3, 4)); /* Value = 81 */
+console.log(3 ** 4); /* Value = 81 */
+
+/* Math.sqrt( ) */
+// 제곱근을 알려줌
+console.log(Math.sqrt(9)); /* Value = 3 */
+
+
+// --------- 정말 많이 사용되는 Random ---------- //
+/* Math.random( ) */
+// 0부터 1까지의 수를 랜덤으로 반환 해줌
+console.log(Math.random()); /* Value = 매번 랜덤 */
+
+/* 1~10까지의 random ? */
+console.log(Math.floor(Math.random() * 10) + 1); /* Value = 0~10 random */
