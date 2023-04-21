@@ -167,8 +167,8 @@ console.log(TesttoLocaleString.toLocaleString('ar-EG')); /* Value = ١٬١٤٢ *
 
 /* Number.toPrecision */
 // 원하는 자릿수까지 유효하도록 반올림
-let TesttoPrecision = 1.12345
-console.log(TesttoPrecision.toPrecision(3)); /* Value = 1.12 */
+let TesttoPrecision = 1234.12345
+console.log(TesttoPrecision.toPrecision(6)); /* Value = 1.12 */
 
 
 
@@ -237,3 +237,73 @@ console.log(Math.floor(Math.random() * 10) + 1); /* Value = 0~10 random */
 
 
 /* String */
+
+/* new String( ) */
+// string 생성자
+let TextConstructor = new String("Text");
+console.log(TextConstructor); /* Value = [String: 'Text'] */
+
+let TestText = "문자열  테스트 문자열 "
+/* Text[ ] & Text.charAt( ) */
+// 지정한 index Num 자리의 글자를 반환함
+console.log(TestText[6]); /* Value = 스 */
+console.log(TestText.charAt(6)); /* Value = 스 */
+
+/* Text.length */
+// 문자열의 총 수를 알려줌
+console.log(TestText.length); /* Value = 13 */
+
+/* Text.indexOf( ) */
+// 해당 값이 문자열에 몇번째 인덱스인지 알려줌
+console.log(TestText.indexOf("테")); /* Value = 7 */
+
+/* Text.lastIndexOf( ) */
+// 뒤에서 부터 카운트해서 인덱스 번호를 알려줘야하는데...
+console.log(TestText.lastIndexOf("열")); /* Value =  */
+
+/* Text.includes( ) */
+// 해당 값이 문자열에 존재하는가 결과값을 반환
+console.log(TestText.includes(" 테스")); /* Value = ture */
+console.log(TestText.includes("없다")); /* Value = false */
+
+/* Text.startWith( ) */
+// 해당 값으로 시작하는지 결과값을 반환
+console.log(TestText.startsWith("자")); /* Value = false */
+console.log(TestText.startsWith("문")); /* Value = true */
+
+/* Text.endsWith( ) */
+// 해당 값으로 문자열이 끝나는지 결과값 반환
+console.log(TestText.endsWith(" ")); /* Value = true */
+console.log(TestText.endsWith("열 ")); /* Value = true */
+
+/* Text.toUpperCase( ) */
+let uplower = 'UPPERlower';
+// 문자열을 전부 대문자로
+console.log(uplower.toUpperCase()); /* Value = UPPERLOWER */
+
+/* Text.toLowerCase( ) */
+// 문자열을 전부 소문자로
+console.log(uplower.toLowerCase()); /* Value = upperlower */
+
+/* Text.substring( index , n ) */
+// 문자열의 인덱스 번호부터 n번째 인덱스 번호까지의 문자열을 반환
+console.log(uplower.substring(2,8)); /* Value = PERlow */
+
+/* Text.slice( ) */
+// 지정한 인덱스 번호부터 그뒤의 문자열들을 반환
+// 인덱스에 -를 붙이면 뒤에서부터 카운트
+console.log(uplower.slice(3)); /* Value = ERlower */
+console.log(uplower.slice(-3)); /* Value = wer */
+
+/* Text.trim( ) */
+// 문자열의 모든 앞뒤 공백을 없애줌
+let TestTrim ="     공백  공백   공백        "
+console.log(TestTrim.trim()); /* Value = 공백  공백   공백 */
+
+/* Text.split( ) */
+// 해당 값을 제외 하고 양옆의 문자열을 따로따로 반환한다.
+let SplitTest = "테스트! 문자열! 나누어! 표현!  "
+console.log(SplitTest.split("!")); /* Value = [ '테스트', ' 문자열', ' 나누어', ' 표현', '  ' ] */
+// ( value , 3 ) 반환 값들중 앞에서 3개의 값만 반환함.
+console.log(SplitTest.split("!",3)); /* Value = [ '테스트', ' 문자열', ' 나누어' ] */
+
