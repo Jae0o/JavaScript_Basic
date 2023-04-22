@@ -307,3 +307,46 @@ console.log(SplitTest.split("!")); /* Value = [ '테스트', ' 문자열', ' 나
 // ( value , 3 ) 반환 값들중 앞에서 3개의 값만 반환함.
 console.log(SplitTest.split("!",3)); /* Value = [ '테스트', ' 문자열', ' 나누어' ] */
 
+
+/* ------------------------------------------------------------------------ */
+
+
+/* Date */
+// 현재시간과 특정 시간을 불러올 수 있음.
+console.log(new Date()); /* Value = 2023-04-22T00:25:56.350Z */
+console.log(new Date("mar 5 2021")); /* Value = 2021-03-04T15:00:00.000Z */
+
+/* UTC */
+// 세계 협정 시간으로 1970년도 1월 1일 UTC 자정과의 차이 시간을 밀리초 단위로 계산한것.
+
+/* Date.now( ) */
+// 현재의 시간을 밀리초로 보여줌
+console.log(Date.now()); /* Value = 1682123349803 */
+
+/* Date.parse( ) */
+// 특정 시간을 밀리초 단위로 바꿔줌
+console.log(Date.parse('2021-03-04T15:00:00.000Z')); /* Value = 1614870000000 */
+
+const now = new Date();
+console.log(now); /* Value = 2023-04-22T00:33:03.525Z */
+/* Date.setFullYear And Month And Date ..등 */
+// set뒤의 값으로 Date를 원하는 Date로 변경시켜준다
+now.setFullYear(2020);
+console.log(now); /* Value = 2020-04-22T00:34:28.806Z */
+now.setMonth(0);
+console.log(now); /* Value = 2020-01-22T00:35:10.107Z */
+now.setHours(0);
+console.log(now); /* Value = 2020-01-21T15:38:24.002Z */
+
+/* Date.getFullYear and Month ..등 */
+// 해당 Date의 원하는 부분을 반환함.
+console.log(now.getFullYear()); /* Value = 2020 */
+console.log(now.getHours()); /* Value =  0 */
+console.log(now.getDay()); /* Value = 3 */
+// Day = 0 부터 일요일 / 6은 토요일
+
+/* Date.toString( ) and toTimeString( ).. 등 */
+console.log(now.toString()); /* Value = Wed Jan 22 2020 00:43:55 GMT+0900 (대한민국 표준시) */
+console.log(now.toTimeString()); /* Value = 00:44:17 GMT+0900 (대한민국 표준시) */
+console.log(now.toLocaleString("en-US")); /* Value = 1/22/2020, 12:45:45 AM */
+console.log(now.toLocaleString("ko-KR")); /* Value = 2020. 1. 22. 오전 12:46:03 */
