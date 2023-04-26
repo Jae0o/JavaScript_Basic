@@ -74,17 +74,17 @@ console.log(foundindex); /* Value */
 
 /* ------------------------------------------------------------------------ */
 
-/* Array.some ( function ( array ) { 조건 } ) */
+/* Array.some ( function ( item ) { 조건 } ) */
 // Array의 아이템들이 부분적으로 조건 ( callback function ) 과 동일 하다면 true 아니면 false
-const someArray = findArray.some(function (array) { return array.name === "이" })
+const someArray = findArray.some(function (item) { return item.name === "이" })
 console.log(someArray); /* true */
 
-/* Array.some ( function ( array ) { 조건 } ) */
+/* Array.every ( function ( item ) { 조건 } ) */
 // Array의 모든 아이템이 조건 ( callback function ) 과 동일 하다면 true 아니면 false
-const everyArrayfalse = findArray.every(function (array) { return array.name === "이" });
+const everyArrayfalse = findArray.every(function (item) { return item.name === "이" });
 console.log(everyArrayfalse); /* Value = false */
 
-const everyArraytrue = findArray.every(function (array) { return array.동일 === "값" });
+const everyArraytrue = findArray.every(function (item) { return item.동일 === "값" });
 console.log(everyArraytrue); /* Value = true */
 
 /* ------------------------------------------------------------------------ */
