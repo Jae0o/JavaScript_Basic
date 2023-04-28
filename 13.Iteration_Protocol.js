@@ -1,7 +1,7 @@
 "use strict";
 /* Iteration Protocol */
 /* 순회가 가능하기위해 따라야 하는 규칙 or 인터페이스 */
-// 규격에 맞다면 for...of or spred 에서 사용가능하고 이런것이 가능한 기본적 Data Type 은 Array, String, Map, Set
+// 규격에 맞다면 for...of or spread 에서 사용가능하고 이런것이 가능한 기본적 Data Type 은 Array, String, Map, Set
 
 const testArray = [1, 2, 3];
 // 배열은 기본적으로 순회가 가능하다.
@@ -16,7 +16,7 @@ for (const item of testArray) {
 
 // [Symbol.iterator](): Iterator;
 // 심볼정의를 가진 객체나, 특정한 함수가 Iterator를 리턴한다는것은 순회가능한 객체이다 라는뜻
-// 순회가 가능하다면 for... of , spred를 사용할 수 있다.
+// 순회가 가능하다면 for... of , spread를 사용할 수 있다.
 
 const valuesTest = testArray.values();
 console.log(valuesTest); /* Value = Object [Array Iterator] {} */

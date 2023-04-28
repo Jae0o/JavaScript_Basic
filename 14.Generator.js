@@ -32,5 +32,5 @@ console.log(TestLog.throw('Error!')) /* Value = Error!
 /* ------------------------------------------------------------------------ */
 
 /* Iterator.return( ) */
-// 결과가 결과가 출력되지 않았지만 도중에 결과를 끊어버리고 마무리 시킨다.
+// 결과가 출력되지 않았지만 도중에 결과를 끊어버리고 마무리 시킨다.
 console.log(TestLog.return()); /* Value = { value: undefined, done: true } */
