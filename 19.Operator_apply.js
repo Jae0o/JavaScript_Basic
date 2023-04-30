@@ -87,3 +87,32 @@ let key = item.key1;
 let UseKey = item && item.key1;
 // 이용 해줘야 오류가 아닌 undefined라는 결과가 호출됨
 console.log(key); /* Value =  */
+
+/* ------------------------------------------------------------------------ */
+
+/* Optional Chaining Operator */
+//  ?. 있다면?
+// 위에서의 null, undefined 구별을 좀더 간편하게 도와주는 선언자
+
+let OCO = { '성': 'Lee', '이름': { '중간': 'Jae', '끝': 'Yeong' } }
+console.log(OCO); /* Value = { '성': 'Lee', '이름': { '중간': 'Jae', '끝': 'Yeong' } } */
+
+OCO && OCO.이름 && OCO.이름.중간 && console.log('사용 안함');
+// 일반적으로 호출을 할때 꼬리에 꼬리를 물고 호출해야하는 번거로움이 존재
+
+OCO?.이름?.끝 && console.log('사용함');
+// 해석 : OCO가 있다면 그안에 이름이 있다면 그리고 그안에 끝이 있다면 log 실행.
+// 간편하게 축약가능.
+
+/* ------------------------------------------------------------------------ */
+
+/* ?? Nullish Coalescing Operator */
+// Null은 true로 판단하고 undefined만 false로 간주한다.
+
+// 왼쪽의 값이 숫자가 아니라면 -1을 출력하고 싶을때.
+
+const Nullish = 0;
+console.log(Nullish || '-1'); /* Value = -1 */
+// 결과의 이유는 보통 Boolean 값에서 0 undefined null 등은 false의 값을 가지기 때문에 -1 출력
+console.log(Nullish ?? '-1'); /* Value = 0 */
+// ?? 라는 Nullish Coalescing Operator 사용시 true
