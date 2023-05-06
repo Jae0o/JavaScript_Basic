@@ -244,3 +244,31 @@ let bigcat = new UseCat("white", "nabi");
 console.log(bigcat);
 bigcat.food(); /* 추가한 함수 */
 bigcat.play(); /* 기존의 상속된 함수에 덮어쓰고 유지하기 */
+
+
+/* ------------------------------------------------------------------------ */
+
+/* 오버라이딩 */
+
+function overRiding(A, B) {
+    this.A = A;
+    this.B = B;
+    this.display = function () {
+        console.log("기존의 내장 프로퍼티 레벨의 함수", A, B)
+    }
+}
+
+const over1 = new overRiding(3, 4);
+const over2 = new overRiding(5, 4);
+
+console.log(over1); /* Value = overRiding { A: 3, B: 4, display: [Function (anonymous)] } */
+console.log(over2); /* Value = overRiding { A: 5, B: 4, display: [Function (anonymous)] } */
+// 생성자를 통해 만든 인스턴스에는 각각의 프로토타입 레벨의 함수가 존재!
+over1.display(); /* Value = 기존의 내장 프로퍼티 레벨의 함수 3 4 */
+over2.display(); /* Value = 기존의 내장 프로퍼티 레벨의 함수 5 4 */
+
+over1.display = function () {
+    console.log("인스턴트 레벨에서 동일한 이름으로 함수를 재정의 하여 프로토타입 레벨의 함수를 가리는것을 오버라이딩이라함")
+}
+over1.display() /* Value = 인스턴트 레벨에서 동일한 이름으로 함수를 재정의 하여 프로토타입 레벨의 함수를 가리는것을 오버라이딩이라함 */
+over2.display() /* Value = 기존의 내장 프로퍼티 레벨의 함수 5 4 */
