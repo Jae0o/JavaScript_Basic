@@ -218,6 +218,9 @@ newDog.animalDisplay(); /* Value = animal의 함수 Dog 3 */
 // 오브젝트는 단 하나의 prototype( 부모 ) 가리킬 수 있다.
 // 하지만 여러 함수들을 상속학 싶을때 사용하는 방법이 mixin
 
+// Object.assign ( 이름.prototype, object1, object2 .... )
+// 해당 이름을 가진 object에 object1 과 object2 등에 들어있는 함수를 상속시킴 
+
 const play = {
     play: function () {
         console.log(`${this.name}play!!`)
