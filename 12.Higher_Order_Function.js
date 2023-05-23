@@ -70,7 +70,7 @@ console.log(found); /* value = { name: '이' } */
 /* Array.findIndex ( function ( array ) { 조건 } ) */
 // 해당 조건에 맞는 index번호를 반환
 const foundindex = findArray.findIndex(function (array) { return array.name === "이" })
-console.log(foundindex); /* Value */
+console.log(foundindex); /* Value = 1 */
 
 /* ------------------------------------------------------------------------ */
 
